@@ -1,0 +1,59 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="contact pd-y" id="contact">
+  <div class="section-header">
+    <h2 class="section-titel">Kontakt</h2>
+    <span class="line"></span>
+  </div>
+
+  <!-- container -->
+  <div class="container">
+    <div class="contact-content">
+      <div class="form">
+        <h3 class="contact-title">Kontaktire Uns</h3>
+        <form class="kontakt-form">
+          <div class="kotakt-form-item">
+            <label for="vorname">Vorame</label>
+            <input type="text" id="vorname" />
+          </div>
+          <div class="kotakt-form-item">
+            <label for="name">Name</label>
+            <input type="text" id="name" />
+          </div>
+          <div class="kotakt-form-item">
+            <label for="email"
+              ><div>E-Mail-Adresse<span>*</span></div></label
+            >
+            <input type="text" id="email" />
+          </div>
+          <div class="kotakt-form-item">
+            <label for="name">Ihre Nahricht an uns</label>
+            <textarea type="text" id="message"></textarea>
+          </div>
+          <button
+            id="submit-btn"
+            type="submit"
+            class="submit-btn hover-opacity"
+          >
+            Senden
+          </button>
+        </form>
+      </div>
+      <div class="contact-info">
+        <div>
+          <p><i class="icon fa fa-building"></i>Ballon GmbH & Co. KG</p>
+          <p><i class="icon fa fa-map-marker"></i>Berliner 61, 51149 Hamburg</p>
+        </div>
+        <div>
+          <p><i class="icon fa fa-phone"></i>Tel: 05203-96 61 60</p>
+          <p><i class="icon fa fa-fax"></i>Fax: 02203-96 61 66 6</p>
+          <p>
+            <i class="icon fa fa-envelope"> </i>E-Mail: ballon@tourcontact.de
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

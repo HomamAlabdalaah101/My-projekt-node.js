@@ -1,0 +1,26 @@
+{% extends "admin_base.html" %}
+
+{% block content %}
+<h1>Manage Users:</h1>
+<p><a href="/signup" class="w3-btn w3-block w3-black">Add User</a></p>
+
+<table class="w3-table-all w3-card-4">
+    <tr>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Actions</th>
+    </tr>
+    {% for u in users %}
+    <tr>
+        <td>{{u.name}}</td>
+        <td>{{u.username}}</td>
+        <td>{{u.email}}</td>
+        <td>
+            <a class="w3-button w3-ripple w3-red" href="/delete_profile/{{u.id}}">Delete</a>
+        </td>
+    </tr>
+
+    {% endfor %}
+</table>
+{% endblock %}

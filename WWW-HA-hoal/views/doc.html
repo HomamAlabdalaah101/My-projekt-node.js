@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="team pd-y" id="team">
+    <div class="section-header">
+        <h2 class="section-titel"> Dokumentation WWW-Programmierung - Konzept ,  Homam Alabdalaah ,
+            651368</h2>
+        <span class="line"></span>
+    </div>
+
+    <!-- container -->
+    <div class="container">
+
+
+        <h1>Inspiration and Idea</h1>
+        <p> Ballon is a tourism agency which tries to give its customers best trips of their lives. Only problem is that
+            it had no online presence this website enables them to give customer a platform where they can know more
+            about the agency and know what kind of trips they offer. Not only that, customers and potential customers
+            can create accounts and comment on the trips itself to express their likings and disliking.
+        </p>
+        <h1>Website Stack</h1>
+        <p> This website is built with the Node js webstack. Because I used the node js server framework express.js to develop backend endpoints and used Nunjucks as the template engine to write the views. Used JWT token for authentication purposes and SQLITE as the database of choice.
+
+        </p>
+        <h1>Development lifecycle</h1>
+        <p> I developed the website on an iterative model. I developed first how one feature will look, created the front end side, then created the back end endpoint and database service implementation, and then tested how it would be integrated with other functions. I developed a search function, a registration function and a comment function while I did the rest.
+
+
+        </p>
+        <h2>Backend</h2>
+        <p> The backend development included developing the appropriate database service for a database entry, creating a route entry for this entry, and registering this route file for use in the server.js file. For example, to create a comment on places to visit, we first need to create a function in the dbconfig.js file that creates that particular table in the database to store comment data. After creating this script, the commentsService.js file was created which hosts all functions that interact directly with the database to perform CRUD on that particular table. After creating this file, I created the commentsRoutes.js file that hosts the backend endpoints, specifically with regards to the comment entity in the application.
+
+        </p>
+        <h2>Frontend</h2>
+        <p> For frontend development i use Nunjucks templating engine which has been recommended by requirement document. Nunjucks is different than other templating engines in such that it does not need templates file to be of certain kind. It works on html files. To develop a frontend page the typical process was to identify which parts of the view are conditional and which parts are to be looped and the writing nunjucks logic accordingly. For example, on base.html page, there had to put a conditional logic to show logout and profile buttons if user is signed in otherwise show login and signup links. There was not much use of Javascript in the frontend as this is server rendered app which means most of the work is being done by nunjucks at the backend of the application to spit out the html and css for the website.
+
+        </p>
+        <h1>Application flow</h1>
+        <p>Application flow can be divided for the three different user types</p>
+        <h2>Visitor flow</h2>
+        <p> A normal visitor can only see About My Pages and landing pages with team pages. He can't comment on landing pages, but he can read other people's comments
+
+        </p>
+        <h2>Logged In user flow</h2>
+        <p> A user who has created an account can do above things as well as can update his account, with the perk to add his own comments publically.
+
+        </p>
+        <h2>Admin flow</h2>
+        <p> An admin is special user who not only can do above stuff, he can manage all the data on the website. He can delete abusive comments, users also manage and update destinations showed on the website.
+            Sign In- Username:admin-Password:123
+            
+        </p>
+        <h1>Future Enhancements</h1>
+        <ol>
+            <li>Users can like/dislike a comment or destination</li>
+            <li>More control for user accounts on profile page</li>
+            <li>Google maps integration for destinations</li>
+        </ol>
+        <h1>Lessons learnt</h1>
+        <ol>
+           <p> It is very important to work out domain objects and data models before you start coding. It was a small website that I developed using an iterative approach, but it showed me the importance of solidifying the models early in the development lifecycle. When your domain entities are clear, you can get the job done neatly, too.
+            
+        </p>
+            
+             
+            
+        </ol>
+    </div>
+    <!-- /container -->
+</div>
+{% endblock %}

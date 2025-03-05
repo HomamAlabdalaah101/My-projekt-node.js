@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="contact pd-y" id="contact">
+    <div class="section-header">
+        <h2 class="section-titel">Add Destination</h2>
+        <span class="line"></span>
+    </div>
+    <!-- container -->
+    <div class="container">
+        <div class="contact-content">
+            <div class="form">
+                <h3 class="contact-title">Add Destination here:</h3>
+                <form class="kontakt-form" method="post" action="/add_destination" enctype="multipart/form-data">
+                    <div class="kotakt-form-item">
+                        <label for="vorname">Name</label>
+                        <input type="text" id="name" name="name" />
+                    </div>
+                    <div class="kotakt-form-item">
+                        <label for="vorname">Country</label>
+                        <input type="text" id="country" name="country" />
+                    </div>
+                    <div class="kotakt-form-item">
+                        <label for="vorname">Picture</label>
+                        <input type="file" id="image" name="image" />
+                    </div>
+                    <div class="kotakt-form-item">
+                        <label for="vorname">Description</label>
+                        <textarea id="description" name="description"> </textarea>
+                    </div>
+                    <button id="submit-btn" type="submit" class="submit-btn hover-opacity">
+                        Add Destination
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

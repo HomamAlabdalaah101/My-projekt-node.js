@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="team pd-y" id="team">
+    <div class="section-header">
+        <h2 class="section-titel">User Info:</h2>
+        <span class="line"></span>
+    </div>
+
+    <!-- container -->
+    <div class="container">
+
+        <div class="team-content">
+            <!-- team item -->
+            <div class="team-item">
+                <div class="team-item-desc">
+                    <p class="team-item-name">Name: {{user.name}}</p>
+                    <p class="team-item-name">Username: {{user.username}}</p>
+                    <p class="team-item-name">Email: {{user.email}}</p>
+                    <button style="background-color: blueviolet;color: white;margin-top: 15px;" onclick="window.location.href='/update_profile'" class="delAccountBtn hover-opacity">Update Account</button>
+                    <button style="background-color: red;color: white;margin-top: 15px;" onclick="window.location.href='/delete_profile'" class="delAccountBtn hover-opacity">Delete Account</button>
+
+                </div>
+            </div>
+            <!--  /team item -->
+        
+        </div>
+    </div>
+    <!-- /container -->
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="contact pd-y" id="contact">
+    <div class="section-header">
+        <h2 class="section-titel">Update Destination</h2>
+        <span class="line"></span>
+    </div>
+    <!-- container -->
+    <div class="container">
+        <div class="contact-content">
+            <div class="form">
+                <h3 class="contact-title">Update Destination here:</h3>
+                <form class="kontakt-form" method="post" action="/update_destination" enctype="multipart/form-data">
+                    <input type="hidden" name="id" value="{{des.id}}" />
+                    <div class="kotakt-form-item">
+                        <label for="vorname">Name</label>
+                        <input type="text" id="name" name="name" value="{{des.name}}" />
+                    </div>
+                    <div class="kotakt-form-item">
+                        <label for="vorname">Country</label>
+                        <input type="text" id="country" name="country" value="{{des.country}}" />
+                    </div>
+                    <div class="kotakt-form-item">
+                        <label for="vorname">Picture</label>
+                        <input type="file" id="image" name="image" />
+                    </div>
+                    <div class="kotakt-form-item">
+                        <label for="vorname">Description</label>
+                        <textarea id="description" name="description">{{des.description}} </textarea>
+                    </div>
+                    <button id="submit-btn" type="submit" class="submit-btn hover-opacity">
+                        Update Destination
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

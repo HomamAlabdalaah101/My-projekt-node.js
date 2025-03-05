@@ -1,0 +1,21 @@
+{% extends "admin_base.html" %}
+
+{% block content %}
+<h1>Manage Comments:</h1>
+<table class="w3-table-all w3-card-4">
+    <tr>
+        <th>Comment</th>
+        <th>User</th>
+        <th>Actions</th>
+    </tr>
+    {% for c in comments %}
+    <tr>
+        <td>{{c.comment}}</td>
+        <td>{{c.name}}</td>
+        <td>
+            <a class="w3-button w3-ripple w3-red" href="/delete_comment/{{c.id}}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

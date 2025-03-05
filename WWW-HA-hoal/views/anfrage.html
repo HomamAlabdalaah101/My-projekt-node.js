@@ -1,0 +1,40 @@
+{% extends "base.html" %} {% block content %}
+<!-- Anfrage -->
+<div class="anfrage pd-y">
+  <div class="container">
+    <div class="anfrage-content">
+      <div class="anfrage-left">
+        <h3 class="anfrage-title">Schreiben Sie uns etwas</h3>
+        <form class="anfrage-form">
+          <input type="text" id="name" placeholder="Name" />
+          <input type="text" id="email" placeholder="E-mail" />
+          <input type="text" placeholder="Betreff" id="betreff" />
+          <textarea type="text" id="message" placeholder="Nachricht"></textarea>
+          <button
+            id="submit-btn"
+            type="submit"
+            class="submit-btn hover-opacity"
+          >
+            Senden
+          </button>
+        </form>
+      </div>
+
+      <div class="anfrage-right">
+        <img
+          src="images/linkedin-sales-solutions-pAtA8xe_iVM-unsplash.jpg"
+          alt=""
+        />
+        <div class="angfrage-info">
+          <p>Albert Fries</p>
+          <p>Prokurist</p>
+          <p>Telefon: 1526816984</p>
+          <p>E-mail: office@ballon.de</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /Anfrage -->
+
+{% endblock %}

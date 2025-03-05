@@ -1,0 +1,95 @@
+{% extends "base.html" %} {% block content %}
+
+<!-- Home Section -->
+
+<div class="home" id="home">
+  <div class="overlay">
+    <div class="home-content">
+      <h1 class="titel">wir sind immer für Sie da</h1>
+      <p class="home-desc cr">
+        Wir sind mit Leidenschaft und Begeisterung bei der Sache. Die Touristik
+        ist für uns die schönste und spannendste Branche. Wir tun was wir können
+        und können was wir tun, denn unser Job macht uns Spaß.
+      </p>
+      <form
+        style="display: flex; margin: 10px; height: 70px"
+        method="get"
+        action="/search"
+      >
+        <input
+          type="search"
+          id="search"
+          style="width: 80%; font-size: x-large; padding: 10px"
+          placeholder="e.g: Germany"
+          name="search"
+          required
+        />
+        <button
+          type="submit"
+          class="btn btn-learn hover-opacity"
+          style="width: 20%; font-size: x-large; margin-top: 0%"
+        >
+          Search
+        </button>
+      </form>
+      <button class="btn btn-start hover-opacity">
+        <a href="/anfrage">Anfrage!</a>
+      </button>
+      <button class="btn btn-learn hover-opacity">
+        <a href="/about">Mehr Lesen!</a>
+      </button>
+    </div>
+    <!-- home-content -->
+  </div>
+  <!-- ./overlay -->
+</div>
+<!-- /home -->
+
+<!-- About section -->
+<div class="about pd-y" id="about">
+  <!-- section Header -->
+  <div class="section-header">
+    <h2 class="section-titel">welcome to webseite</h2>
+    <span class="line"></span>
+  </div>
+  <!-- /section-header -->
+
+  <div class="container">
+    <div class="about-content">
+      <!-- about item -->
+      <div class="about-item ltr-effect">
+        <i class="icon fa fa-cogs fa-2x"></i>
+        <h2 class="about-item-titel">erfahrung</h2>
+        <p class="about-titel-desc">Wir sind der richtige Ansprechpartner!</p>
+
+        <a href="/about" class="about-item-link">mehr lesen</a>
+      </div>
+      <!-- /about-item -->
+
+      <div class="about-item ltr-effect mg">
+        <i class="icon fa fa-magic fa-2x"></i>
+        <h2 class="about-item-titel">vertrauen</h2>
+        <p class="about-titel-desc">Die deutsche Zentrale für Tourismus</p>
+
+        <a href="/about" class="about-item-link">mehr lesen</a>
+      </div>
+      <!-- /about-item -->
+
+      <div class="about-item ltr-effect">
+        <i class="icon fa fa-mobile fa-2x"></i>
+        <h2 class="about-item-titel">spaß</h2>
+        <p class="about-titel-desc">Organsierte touristische Aktivitäten</p>
+
+        <a href="/about" class="about-item-link">mehr lesen</a>
+      </div>
+      <!-- /about-item -->
+
+      <div class="clear"></div>
+    </div>
+    <!-- /about-content -->
+  </div>
+  <!-- /container -->
+</div>
+<!-- /about -->
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="portfolio pd-y" id="portfolio">
+  <div class="section-header">
+      <h2 class="section-titel">galerie</h2>
+      <span class="line"></span>
+  </div>
+
+  <div class="container">
+      <div class="portfolio-content">
+        {% for d in des %}
+        <div class="portfolio-item">
+          <img src="/destinations/{{d.image}}" alt="" />
+
+          <div class="layer-content">
+              <div class="layer-info">
+                  <span class="category">{{d.country}}</span>
+                  <h3 class="layer-content-titel">{{d.name}}</h3>
+                  <a href="/destination/{{d.id}}"><i class="fa fa-search"></i></a>
+              </div>
+          </div>
+          <!-- /layer-content -->
+      </div>
+        {% endfor %}
+          <div class="clear"></div>
+      </div>
+      <!-- /portfolio-content -->
+  </div>
+  <!-- /container -->
+</div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="contact pd-y" id="contact">
+    <div class="section-header">
+        <h2 class="section-titel">Sign Up</h2>
+        <span class="line"></span>
+    </div>
+
+    <!-- container -->
+    <div class="container">
+        <div class="contact-content">
+            <div class="form">
+                <h3 class="contact-title">Sign Up here:</h3>
+                <form class="kontakt-form" method="post" action="/signup">
+                    <div class="kotakt-form-item">
+                        <label for="vorname">Username</label>
+                        <input type="text" id="username" name="username" required />
+                    </div>
+                    <div class="kotakt-form-item">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required />
+                    </div>
+                    <div class="kotakt-form-item">
+                        <label for="name">Password</label>
+                        <input type="password" id="password" name="password" required />
+                    </div> 
+                
+                    <div class="kotakt-form-item">
+                        <label for="email"><div>E-Mail-Adresse<span>*</span></div></label>
+                        <input type="text" id="email" name="email" required />
+                    </div>
+                    <input type="submit"  id="submit-btn" class="submit-btn hover-opacity" value="Sign Up"></input>
+                        
+                
+                </form>
+            </div>
+          
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}

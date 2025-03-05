@@ -1,0 +1,26 @@
+{% extends "admin_base.html" %}
+
+{% block content %}
+<h1>Manage Destinations:</h1>
+<p><a href="/add_destination" class="w3-btn w3-block w3-black">Add Destination</a></p>
+
+<table class="w3-table-all w3-card-4">
+    <tr>
+        <th>Name</th>
+        <th>Country</th>
+        <th>Description</th>
+        <th>Actions</th>
+    </tr>
+    {% for d in des %}
+    <tr>
+        <td>{{d.name}}</td>
+        <td>{{d.country}}</td>
+        <td>{{d.description}}</td>
+        <td><a class="w3-button w3-ripple w3-green" href="/update_destination/{{d.id}}" >Edit</a>
+            <a class="w3-button w3-ripple w3-red" href="/delete_destination/{{d.id}}">Delete</a>
+        </td>
+    </tr>
+
+    {% endfor %}
+</table>
+{% endblock %}
