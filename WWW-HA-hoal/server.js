@@ -5,11 +5,11 @@ const cookieParser = require('cookie-parser');
 const fileUpload = require('express-fileupload');
 const path = require('path');
 const port = process.env.PORT || 3000;
-const appRoutes=require('./Routes/appRoutes');
+const appRoutes = require('./Routes/appRoutes');
 const userRoutes = require('./Routes/userRoutes');
-const destRoutes=require('./Routes/destinationRoutes');
-const adminRoutes=require('./Routes/adminRoutes');
-const commentsRoutes=require('./Routes/commentRoutes');
+const destRoutes = require('./Routes/destinationRoutes');
+const adminRoutes = require('./Routes/adminRoutes');
+const commentsRoutes = require('./Routes/commentRoutes');
 
 
 const authMW = require("./Middlewares/authMiddleware").authMW;
@@ -43,5 +43,5 @@ const server = http.createServer(app);
 server.listen(port, () => {
     console.log(`Server started on port ${port} :)`);
 });
-//dbConfig.initDB()
+dbConfig.initDB()
 module.exports = server;
