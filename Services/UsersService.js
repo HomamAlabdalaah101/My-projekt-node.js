@@ -11,15 +11,14 @@ async function SaveUser(data) {
         name:data.name,
         email: data.email
     };
-    let query = dbQueries.createInsertQuery(USERTBL, obj);
-    console.log(query);
-    await db.run(query);
+    let { sql, params } = dbQueries.createInsertQuery(USERTBL, obj);
+    await db.run(sql, params);
     await db.close();
 }
 async function AuthUser(username) {
     try {
         let db = await getDb();
-        let user = await db.get(`SELECT * FROM ${USERTBL} WHERE username='${username}';`);
+        let user = await db.get(`SELECT * FROM ${USERTBL} WHERE username=?`, [username]);
         await db.close();
         return user;
     }
@@ -37,20 +36,19 @@ async function GetAllUsers() {
 
 async function DeleteUser(id) {
     let db = await getDb();
-    await db.run(`DELETE FROM ${USERTBL} WHERE id=${id}`);
+    await db.run(`DELETE FROM ${USERTBL} WHERE id=?`, [id]);
     await db.close();
 }
 async function UpdateUser(data) {
     let db = await getDb();
-    let query = dbQueries.createUpdateQuery(USERTBL, data);
-    console.log(query);
-    await db.run(query);
+    let { sql, params } = dbQueries.createUpdateQuery(USERTBL, data);
+    await db.run(sql, params);
     await db.close();
 }
 async function CheckIfUsernameExists(username) {
     try {
         let db = await getDb();
-        let item = await db.get(`SELECT * FROM ${USERTBL} WHERE username='${username}';`);
+        let item = await db.get(`SELECT * FROM ${USERTBL} WHERE username=?`, [username]);
         await db.close();
         if (item) {
             return true;
@@ -67,7 +65,7 @@ async function CheckIfUsernameExists(username) {
 async function GetUserById(id) {
     try {
         let db = await getDb();
-        let user = await db.get(`SELECT * FROM ${USERTBL} WHERE id=${id};`);
+        let user = await db.get(`SELECT * FROM ${USERTBL} WHERE id=?`, [id]);
         await db.close();
         return user;
     }

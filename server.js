@@ -1,3 +1,4 @@
+require('dotenv').config();
 const http = require('http');
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -43,5 +44,5 @@ const server = http.createServer(app);
 server.listen(port, () => {
     console.log(`Server started on port ${port} :)`);
 });
-dbConfig.initDB()
+dbConfig.initDB().catch(err => console.error('DB-Initialisierung fehlgeschlagen:', err));
 module.exports = server;

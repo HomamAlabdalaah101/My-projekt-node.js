@@ -16,12 +16,12 @@ async function initDB() {
 }
 async function createUserTable() {
     let db = await openDb();
-    let query = `CREATE TABLE Persons (
+    let query = `CREATE TABLE IF NOT EXISTS Persons (
     id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     name varchar(500) NOT NULL,
     username varchar(500) NOT NULL,
     email varchar(500) NOT NULL,
-    password varchat(500) NOT NULL,
+    password varchar(500) NOT NULL,
     type varchar(100) NULL
 );`;
     await db.exec(query);
@@ -29,7 +29,7 @@ async function createUserTable() {
 }
 async function createDestinationsTable() {
     let db = await openDb();
-    let query = `CREATE TABLE Destinations (
+    let query = `CREATE TABLE IF NOT EXISTS Destinations (
     id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     name varchar(1000) NOT NULL,
     country varchar(500) NOT NULL,
@@ -41,7 +41,7 @@ async function createDestinationsTable() {
 }
 async function createCommentsTable() {
     let db = await openDb();
-    let query = `CREATE TABLE Comments (
+    let query = `CREATE TABLE IF NOT EXISTS Comments (
     id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     comment varchar(1000) NOT NULL,
     userId INTEGER NOT NULL,

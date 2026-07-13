@@ -9,15 +9,14 @@ async function SaveDestination(data, image) {
         image: image,
         description: data.description,
     };
-    let query = dbQueries.createInsertQuery(USERTBL, obj);
-    console.log(query);
-    await db.run(query);
+    let { sql, params } = dbQueries.createInsertQuery(USERTBL, obj);
+    await db.run(sql, params);
     await db.close();
 }
 async function GetSingleDestination(id) {
     try {
         let db = await getDb();
-        let des = await db.get(`SELECT * FROM ${USERTBL} WHERE id=${id};`);
+        let des = await db.get(`SELECT * FROM ${USERTBL} WHERE id=?;`, [id]);
         await db.close();
         return des;
     }
@@ -34,7 +33,7 @@ async function GetAllDestinations() {
 }
 async function DeleteDestination(id) {
     let db = await getDb();
-    await db.run(`DELETE FROM ${USERTBL} WHERE id=${id}`);
+    await db.run(`DELETE FROM ${USERTBL} WHERE id=?`, [id]);
     await db.close();
 }
 async function UpdateDestination(data, image) {
@@ -48,9 +47,8 @@ async function UpdateDestination(data, image) {
         obj.image = image;
     }
     let db = await getDb();
-    let query = dbQueries.createUpdateQuery(USERTBL, obj);
-    console.log(query);
-    await db.run(query);
+    let { sql, params } = dbQueries.createUpdateQuery(USERTBL, obj);
+    await db.run(sql, params);
     await db.close();
 }
 module.exports = {
